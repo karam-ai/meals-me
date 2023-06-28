@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/meals_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="144dp"
+            android:background="@animator/bg_key"
+            android:choiceMode="singleChoice" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:baselineAligned="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/new_meal_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="Meal Name"
+                    android:hint="@string/meal_name"
+                    android:inputType="textPersonName" />
+
+
+                <EditText
+                    android:id="@+id/new_meal_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/meal_description" />
+
+
+                <EditText
+                    android:id="@+id/new_meal_duration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/meal_duration_in_minutes"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/items_list_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/items_selected" />
+
+                <Button
+                    android:id="@+id/select_items_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="selectItem"
+                    android:text="@string/select_items" />
+
+
+                <Button
+                    android:id="@+id/remove_button"
+                    android:layout_width="168dp"
+                    android:layout_height="32dp"
+                    android:onClick="selectImageFromGalleryButton"
+                    android:text="@string/select_an_image"
+                    android:textSize="12sp"
+                    android:visibility="invisible" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/cancel_new_meal"
+                    android:layout_width="117dp"
+                    android:layout_height="35dp"
+                    android:onClick="cancelDeselectButton"
+                    android:text="@android:string/cancel" />
+
+                <Button
+                    android:id="@+id/submit_new_meal"
+                    android:layout_width="147dp"
+                    android:layout_height="36dp"
+                    android:onClick="submitUpdateButton"
+                    android:text="@string/save_new_meal" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textview_new_meal_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/status" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </ScrollView>
+</LinearLayout>
